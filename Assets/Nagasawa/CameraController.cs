@@ -1,70 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // Buttonコンポーネントを使用するために追加
+using UnityEngine.UI;
 
-public class CameraController : MonoBehaviour
+public class CameraSwitcherUI : MonoBehaviour
 {
-    public Camera Camera1;
-    public Camera Camera2;
-    public Camera Camera3;
-    public Camera Camera4;
+    public Camera[] cameras; // 4つのカメラをアサインする
+    private int currentCameraIndex = 0; // 現在のカメラインデックス
 
-    // ボタンUIをインスペクタで設定
-    public Button switchButton;
+    public Button leftButton; // 左ボタン
+    public Button rightButton; // 右ボタン
 
-    private int currentCameraIndex;
-
-    // Start is called before the first frame update
     void Start()
     {
-        // 最初にCamera1をアクティブにし、他のカメラを非アクティブにする
-        currentCameraIndex = 0;
-        ActivateCamera(currentCameraIndex);
-
-        // ボタンのクリックイベントにリスナーを追加
-        switchButton.onClick.AddListener(SwitchCamera);
-    }
-
-    void SwitchCamera()
-    {
-        // カメラを次のものに切り替える
-        currentCameraIndex = (currentCameraIndex + 1) % 4; // カメラのインデックスを循環させる
-        ActivateCamera(currentCameraIndex);
-    }
-
-    void ActivateCamera(int index)
-    {
-        // すべてのカメラを一度非アクティブにする
-        Camera1.gameObject.SetActive(false);
-        Camera2.gameObject.SetActive(false);
-        Camera3.gameObject.SetActive(false);
-        Camera4.gameObject.SetActive(false);
-
-        // 指定されたインデックスのカメラをアクティブにする
-        switch (index)
+        // 最初のカメラ以外のカメラを無効化する
+        for (int i = 1; i < cameras.Length; i++)
         {
-            case 0:
-                Camera1.gameObject.SetActive(true);
-                break;
-            case 1:
-                Camera2.gameObject.SetActive(true);
-                break;
-            case 2:
-                Camera3.gameObject.SetActive(true);
-                break;
-            case 3:
-                Camera4.gameObject.SetActive(true);
-                break;
-            default:
-                Debug.LogWarning("Invalid camera index");
-                break;
+            cameras[i].gameObject.SetActive(false);
         }
+
+        // カメラが正しく設定されているか確認
+        if (cameras.Length > 0)
+        {
+            cameras[0].gameObject.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("カメラが設定されていません。");
+        }
+
+        // ボタンにイベントを追加
+        leftButton.onClick.AddListener(() => SwitchCamera(-1));
+        rightButton.onClick.AddListener(() => SwitchCamera(1));
     }
 
-    // Update is called once per frame
-    void Update()
+    private void SwitchCamera(int direction)
     {
-        // Updateメソッドは現在必要ありません
+        // 現在のカメラを無効化
+        cameras[currentCameraIndex].gameObject.SetActive(false);
+
+        // 次のカメラを選択
+        currentCameraIndex = (currentCameraIndex + direction + cameras.Length) % cameras.Length;
+
+        // 次のカメラを有効化
+        cameras[currentCameraIndex].gameObject.SetActive(true);
     }
 }
