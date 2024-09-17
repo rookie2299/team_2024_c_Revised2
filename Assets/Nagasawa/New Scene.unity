@@ -676,6 +676,7 @@ GameObject:
   - component: {fileID: 420246936}
   - component: {fileID: 420246935}
   - component: {fileID: 420246934}
+  - component: {fileID: 420246938}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -769,6 +770,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &420246938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420246933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e92811dbbac53f4ba102bf69b780375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
 --- !u!1 &443343513
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,6 +2120,7 @@ GameObject:
   - component: {fileID: 1892697004}
   - component: {fileID: 1892697003}
   - component: {fileID: 1892697002}
+  - component: {fileID: 1892697006}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -2201,6 +2216,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1892697006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892697001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e92811dbbac53f4ba102bf69b780375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
 --- !u!1 &2132034705
 GameObject:
   m_ObjectHideFlags: 0
