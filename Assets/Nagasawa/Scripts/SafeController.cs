@@ -1,59 +1,83 @@
 using UnityEngine;
-using TMPro; // TextMeshProの名前空間をインポート
+using TMPro;  // TextMeshProを使用するため
 
-public class SafeController : MonoBehaviour
+public class KeypadControl : MonoBehaviour
 {
-    public GameObject keypadUI;      // キーパッドのUI
-    public string correctPassword = "1234"; // 正しいパスワード
-    public TMP_InputField inputField;    // パスワード入力用のTMP_InputField
-    public GameObject safeDoor;      // 金庫のドア（開閉用）
+    public GameObject keypadUI;              // キーパッドのUI
+    public TMP_InputField inputDisplay;      // 入力表示用のInput Field
+    public string correctCode1 = "1234";     // 正しいパスコード1
+    public string correctCode2 = "5678";     // 正しいパスコード2
+    public GameObject door1;                 // 扉1
+    public GameObject door2;                 // 扉2
+    private string enteredCode = "";         // 入力されたパスコード
 
-    private bool isKeypadActive = false;
-
-    // Cubeがクリックされた時に呼ばれる
-    void OnMouseDown()
+    // キーパッドを表示するメソッド
+    public void OpenKeypad()
     {
-        if (!isKeypadActive)
+        keypadUI.SetActive(true);  // キーパッドUIを表示
+        enteredCode = "";          // 入力コードをリセット
+        inputDisplay.text = "";    // 表示をリセット
+    }
+
+    // キーパッドの数字ボタンを押したときに呼び出されるメソッド
+    public void AddDigit(string digit)
+    {
+        if (enteredCode.Length < 4)  // 最大4桁まで
         {
-            ShowKeypad(); // キーパッドを表示
+            enteredCode += digit;  // 入力された数字を追加
+            inputDisplay.text = enteredCode;  // InputFieldに入力を反映
         }
     }
 
-    // キーパッドを表示
-    void ShowKeypad()
+    // デリートボタンを押したときに呼び出されるメソッド
+    public void DeleteDigit()
     {
-        Debug.Log("ShowKeypad called"); // デバッグログを追加
-        keypadUI.SetActive(true); // キーパッドUIを表示
-        isKeypadActive = true; // キーパッドがアクティブ状態であることを設定
+        if (enteredCode.Length > 0)
+        {
+            enteredCode = enteredCode.Substring(0, enteredCode.Length - 1);
+            inputDisplay.text = enteredCode;
+        }
     }
 
-    // パスワードのチェック
-    public void CheckPassword()
+    // エンターボタンを押したときに呼び出されるメソッド
+    public void EnterCode()
     {
-        if (inputField.text == correctPassword)
+        if (enteredCode == correctCode1)
         {
-            OpenSafe();
+            OpenDoor(door1);  // 扉1を開く
+            CloseKeypad();     // キーパッドを閉じる
+        }
+        else if (enteredCode == correctCode2)
+        {
+            OpenDoor(door2);  // 扉2を開く
+            CloseKeypad();     // キーパッドを閉じる
         }
         else
         {
-            Debug.Log("Wrong password");
+            inputDisplay.text = "Error";  // エラーメッセージを表示
         }
+        enteredCode = "";  // 入力コードをリセット
     }
 
-    // 金庫を開ける処理
-    void OpenSafe()
+    // 扉を開けるメソッド
+    void OpenDoor(GameObject door)
     {
-        Debug.Log("Safe opened!");
-        // ドアを開けるアニメーション等をここに記述
-        safeDoor.transform.Rotate(0, 90, 0); // 例：ドアを90度回転させて開ける
-        keypadUI.SetActive(false); // キーパッドを隠す
-        isKeypadActive = false;
+        door.SetActive(false);  // 扉を非表示にする
+        Debug.Log("Door opened: " + door.name);
     }
 
-    // キーパッドを閉じる
+    // キーパッドを閉じるメソッド
     public void CloseKeypad()
     {
-        keypadUI.SetActive(false);
-        isKeypadActive = false;
+        keypadUI.SetActive(false);  // キーパッドUIを非表示
+        enteredCode = "";           // 入力コードをリセット
+        inputDisplay.text = "";     // 表示をリセット
+    }
+
+    // 金庫をクリックしたときに呼び出されるメソッド
+    void OnMouseDown()
+    {
+        Debug.Log("Safe clicked");  // デバッグ用
+        OpenKeypad();  // キーパッドを表示
     }
 }
