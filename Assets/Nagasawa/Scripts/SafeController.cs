@@ -14,9 +14,12 @@ public class KeypadControl : MonoBehaviour
     // キーパッドを表示するメソッド
     public void OpenKeypad()
     {
+        if (!keypadUI.activeSelf)  // キーパッドUIが非表示の場合のみリセット
+        {
+            enteredCode = "";      // 入力コードをリセット
+            inputDisplay.text = "";  // 表示をリセット
+        }
         keypadUI.SetActive(true);  // キーパッドUIを表示
-        enteredCode = "";          // 入力コードをリセット
-        inputDisplay.text = "";    // 表示をリセット
     }
 
     // キーパッドの数字ボタンを押したときに呼び出されるメソッド
@@ -45,12 +48,12 @@ public class KeypadControl : MonoBehaviour
         if (enteredCode == correctCode1)
         {
             OpenDoor(door1);  // 扉1を開く
-            CloseKeypad();     // キーパッドを閉じる
+            CloseKeypad();    // キーパッドを閉じる
         }
         else if (enteredCode == correctCode2)
         {
             OpenDoor(door2);  // 扉2を開く
-            CloseKeypad();     // キーパッドを閉じる
+            CloseKeypad();    // キーパッドを閉じる
         }
         else
         {

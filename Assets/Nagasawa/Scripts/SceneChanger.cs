@@ -1,11 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneSwitcher : MonoBehaviour
+public class SceneChanger : MonoBehaviour
 {
-    // 別のシーンをロード
-    public void SwitchToScene(string sceneName)
+    // 遷移したいシーンの名前
+    public string sceneName;
+
+    // シーンを変更するメソッド
+    public void ChangeScene()
     {
+        // SceneManagerを使って指定されたシーンをロード
         SceneManager.LoadScene(sceneName);
     }
 }
