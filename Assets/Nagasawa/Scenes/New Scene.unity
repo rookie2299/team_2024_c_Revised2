@@ -677,6 +677,7 @@ GameObject:
   - component: {fileID: 420246935}
   - component: {fileID: 420246934}
   - component: {fileID: 420246938}
+  - component: {fileID: 420246939}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -783,6 +784,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 
+--- !u!114 &420246939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420246933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1976c2a58e2ae594f96823f9b97fe442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: SafePanel
 --- !u!1 &443343513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,6 +1064,7 @@ GameObject:
   - component: {fileID: 612988641}
   - component: {fileID: 612988640}
   - component: {fileID: 612988644}
+  - component: {fileID: 612988645}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1156,6 +1171,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 
+--- !u!114 &612988645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612988639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1976c2a58e2ae594f96823f9b97fe442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: SafePanel
 --- !u!1 &623796044
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,6 +1776,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313799502}
   m_CullTransparentMesh: 1
+--- !u!1 &1365261995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1365261997}
+  - component: {fileID: 1365261996}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1365261996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365261995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a40ea10d33b1734ea33f2c3a82d1415, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGameCompleted: 0
+  solvedPuzzles: 0
+  totalPuzzles: 5
+--- !u!4 &1365261997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365261995}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 283.67596, y: 195.43483, z: 93.83451}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1457430650
 GameObject:
   m_ObjectHideFlags: 0
@@ -2349,3 +2424,4 @@ SceneRoots:
   - {fileID: 612988643}
   - {fileID: 1892697005}
   - {fileID: 545589577}
+  - {fileID: 1365261997}

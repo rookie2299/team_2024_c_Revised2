@@ -11,4 +11,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Mizutani/Scenes/GameTest.unity
     guid: 0f340c701f020734992c39dc4c336ef7
+
   m_configObjects: {}
