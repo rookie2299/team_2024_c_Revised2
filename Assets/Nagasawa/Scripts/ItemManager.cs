@@ -4,12 +4,10 @@ using System.Collections.Generic;
 public class ItemManager : MonoBehaviour
 {
     public static ItemManager Instance { get; private set; }
-
     private List<Item> itemList = new List<Item>();
 
     void Awake()
     {
-        // シングルトンパターンの設定
         if (Instance == null)
         {
             Instance = this;
@@ -21,16 +19,35 @@ public class ItemManager : MonoBehaviour
         }
     }
 
-    // アイテムをリストに追加
     public void AddItemToList(Item item)
     {
         itemList.Add(item);
         Debug.Log(item.itemName + " has been added to the list.");
     }
 
-    // アイテムリストを取得
     public List<Item> GetItemList()
     {
         return itemList;
+    }
+
+    public string CanEscape(List<List<string>> requiredItems)
+    {
+        foreach (var requiredList in requiredItems)
+        {
+            bool canEscape = true;
+            foreach (var requiredItem in requiredList)
+            {
+                if (!itemList.Exists(item => item.itemName == requiredItem))
+                {
+                    canEscape = false; // 必要なアイテムがなければ脱出できない
+                    break;
+                }
+            }
+            if (canEscape)
+            {
+                return "You can escape with items: " + string.Join(", ", requiredList);
+            }
+        }
+        return "You need more items to escape.";
     }
 }
