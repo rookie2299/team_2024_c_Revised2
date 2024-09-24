@@ -3,23 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ClockOpen : MonoBehaviour , IPointerClickHandler
+public class ClockOpen : MonoBehaviour
 {
     public GameObject ClockNazoPanel;
-    public void OnPointerClick(PointerEventData eventData)
+    public GameObject ClockPanel;
+
+    public void OnClickClockOpenButton()
     {
         ClockNazoPanel.SetActive(true);
+        ClockPanel.SetActive(false);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
