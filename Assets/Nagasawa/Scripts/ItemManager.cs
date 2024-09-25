@@ -5,6 +5,7 @@ public class ItemManager : MonoBehaviour
 {
     public static ItemManager Instance { get; private set; }
     private List<Item> itemList = new List<Item>();
+    public List<string> itemNameList = new List<string>(); 
 
     void Awake()
     {
@@ -20,8 +21,10 @@ public class ItemManager : MonoBehaviour
     }
 
     public void AddItemToList(Item item)
-    {
+    {   
+        Debug.LogWarning("a");
         itemList.Add(item);
+        itemNameList.Add(item.itemName);
         Debug.Log(item.itemName + " has been added to the list.");
     }
 
