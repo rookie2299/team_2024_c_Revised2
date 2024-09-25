@@ -6,19 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
-    public void change_button()
+    public void OnClickStartButton()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("GameTset");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameTest2");
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
