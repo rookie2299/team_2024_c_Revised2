@@ -4715,7 +4715,7 @@ GameObject:
   - component: {fileID: 1881164368}
   - component: {fileID: 1881164372}
   m_Layer: 0
-  m_Name: SmallKey
+  m_Name: "\u5C0F\u3055\u306A\u9375"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4819,7 +4819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e92811dbbac53f4ba102bf69b780375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: SmallKey
+  itemName: "\u5C0F\u3055\u306A\u9375"
 --- !u!1 &1884477369
 GameObject:
   m_ObjectHideFlags: 0
@@ -4834,7 +4834,7 @@ GameObject:
   - component: {fileID: 1884477370}
   - component: {fileID: 1884477374}
   m_Layer: 0
-  m_Name: Clock
+  m_Name: "\u6642\u8A08\u306E\u4EE3\u308F\u308A"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
