@@ -9,6 +9,7 @@ public class BackButton : MonoBehaviour
     public Camera targetCamera;
     public GameObject backButton;
     public GameObject Panel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,5 @@ public class BackButton : MonoBehaviour
         targetCamera.gameObject.SetActive(true);
         Panel.SetActive(true);
         backButton.SetActive(false);
-        
     }
 }
