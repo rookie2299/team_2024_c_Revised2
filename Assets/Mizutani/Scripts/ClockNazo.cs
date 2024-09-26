@@ -11,6 +11,10 @@ public class ClockNazo : MonoBehaviour
     [SerializeField] TextMeshProUGUI MinuteText;
     [SerializeField] TextMeshProUGUI SecondText;
 
+    public AudioClip ClearSound;
+    public AudioClip ClockOpenSound;
+    private AudioSource audioSource;
+
     private int HourCount = 18;
     private int MinuteCount = 53;
     private int SecondCount = 22;
@@ -25,6 +29,7 @@ public class ClockNazo : MonoBehaviour
         HourText.text = HourCount.ToString("00");
         MinuteText.text = MinuteCount.ToString("00");
         SecondText.text = SecondCount.ToString("00");
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void OnClick1hUpButton()
@@ -200,9 +205,16 @@ public void OnClickSelectButton()
     {
         if (HourCount == 18 && MinuteCount == 53 && SecondCount == 22)
         {
-            ClockNazoPanel.SetActive(false);
-            ClockClearPanel.SetActive(true);
+            audioSource.PlayOneShot(ClearSound);
+            Invoke(nameof(Clear), 1f);
         }
     }
+
+void Clear()
+{
+    ClockNazoPanel.SetActive(false);
+    ClockClearPanel.SetActive(true);
+    audioSource.PlayOneShot(ClockOpenSound);
+}
 
 }
