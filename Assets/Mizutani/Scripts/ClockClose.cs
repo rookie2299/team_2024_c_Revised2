@@ -6,19 +6,12 @@ using UnityEngine.UI;
 public class ClockClose : MonoBehaviour
 {
     public GameObject ClockNazoPanel;
+    public GameObject ClockPanel;
+
     public void OnClickCloseButton()
     {
         ClockNazoPanel.SetActive(false);
+        ClockPanel.SetActive(true);
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
