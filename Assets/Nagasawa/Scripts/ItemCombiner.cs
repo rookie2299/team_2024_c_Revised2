@@ -4,26 +4,18 @@ using UnityEngine.EventSystems;
 public class ItemCombiner : MonoBehaviour
 {
     public Camera mainCamera;
-    public GameObject BlackLight;
+    bool isBlackLight = false;
 
-    private void OnMouseDown()
+    private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        // ItemManagerのインスタンスにアクセス
+        if (ItemManager.Instance.itemNameList.Contains("ブラックライト（電池なし）") && 
+            ItemManager.Instance.itemNameList.Contains("電池1") && 
+            ItemManager.Instance.itemNameList.Contains("電池2") &&
+            !isBlackLight)
         {
-            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            // Rayが判定したとき
-            if (Physics.Raycast(ray, out hit))
-            {   
-                // ItemManagerのインスタンスにアクセス
-                if (ItemManager.Instance.itemNameList.Contains("ブラックライト（電池なし）") && 
-                    ItemManager.Instance.itemNameList.Contains("電池1") && 
-                    ItemManager.Instance.itemNameList.Contains("電池2"))
-                {
-                    BlackLight.SetActive(true);
-                }
-            }
+            ItemManager.Instance.itemNameList.Add("BlackLight");
+            isBlackLight = true;
         }
     }
 }
