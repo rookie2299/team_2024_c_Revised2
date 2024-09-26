@@ -6,8 +6,6 @@ public class BoxOpenTrigger : MonoBehaviour
 {
     public Camera mainCamera;
     public GameObject[] BoxOpenList;
-    public Camera targetCamera;
-    public Camera currentCamera;
 
     private void OnMouseDown()
     {
@@ -27,14 +25,6 @@ public class BoxOpenTrigger : MonoBehaviour
                     BoxOpenList[0].SetActive(false);
                     BoxOpenList[1].SetActive(false);
                     BoxOpenList[2].SetActive(false);
-                    SwitchCamera();
-                 
-                    void SwitchCamera()
-                    {
-                        // 現在のカメラを無効にし、ターゲットカメラを有効にする
-                        currentCamera.gameObject.SetActive(false);
-                        targetCamera.gameObject.SetActive(true);
-                    }
                 }
              }
          }

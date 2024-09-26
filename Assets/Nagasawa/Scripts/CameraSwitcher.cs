@@ -10,12 +10,6 @@ public class CameraSwitcher : MonoBehaviour
 
     void Start()
     {
-        // 現在のカメラが指定されていない場合、シーンのMain Cameraを使う
-        if (currentCamera == null)
-        {
-            currentCamera = Camera.main;
-        }
-
         // 最初にターゲットカメラを無効にする
         targetCamera.gameObject.SetActive(false);
     }
