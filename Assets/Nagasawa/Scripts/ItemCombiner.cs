@@ -14,7 +14,7 @@ public class ItemCombiner : MonoBehaviour
             ItemManager.Instance.itemNameList.Contains("電池2") &&
             !isBlackLight)
         {
-            ItemManager.Instance.itemNameList.Add("BlackLight");
+            ItemManager.Instance.itemNameList.Add("完全ブラックライト");
             isBlackLight = true;
         }
     }
