@@ -14,6 +14,7 @@ public class ClockClear : MonoBehaviour
     public GameObject ClockOpenButton;
 
     public GameObject SmallKey;
+    public GameObject ClockDoor;
 
     public void OnClickClockClear1Button()
     {
@@ -35,5 +36,6 @@ public class ClockClear : MonoBehaviour
         Destroy(ClockOpenButton);
         ClockPanel.SetActive(true);
         SmallKey.gameObject.SetActive(true);
+        ClockDoor.gameObject.SetActive(false);
     }
 }
