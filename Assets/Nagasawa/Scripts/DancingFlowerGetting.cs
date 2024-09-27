@@ -1,20 +1,17 @@
 using UnityEngine;
-using System.Collections.Generic;
-using UnityEngine.EventSystems;
 
 public class DancingFlowerGetting : MonoBehaviour
 {
-    public Camera mainCamera;
-    public GameObject DancingFlower;
-    bool isDancingFlower = false;
+    // 変更するコライダーへの参照
+    public Collider targetCollider;
 
-    private void Update()
+    // コライダーの状態を切り替えるメソッド
+    public void ToggleCollider()
     {
-                if(ItemManager.Instance.itemNameList.Contains("text7") && !isDancingFlower)
-                {
-                    ItemManager.Instance.itemNameList.Add("DancingFlower");
-                    isDancingFlower = true;
-                    DancingFlower.SetActive(false);
-                }
+        if (targetCollider != null && ItemManager.Instance.itemNameList.Contains("text7"))
+        {
+            // コライダーの表示/非表示を切り替える
+            targetCollider.enabled = !targetCollider.enabled;
+        }
     }
 }

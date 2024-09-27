@@ -6,6 +6,7 @@ public class DancingFlowerUsage : MonoBehaviour
 {
     public Camera mainCamera;
     public GameObject[] DancingFlowerButtonList;
+    public Collider targetCollider;
 
     private void OnMouseDown()
     {
@@ -19,10 +20,11 @@ public class DancingFlowerUsage : MonoBehaviour
             {   
                 Debug.Log("あ");
                 //オブジェクトが特定のnameを持つとき
-                if(hit.collider.name=="DancingFlower" && ItemManager.Instance.itemNameList.Contains("完全ブラックライト"))
+                if(hit.collider.name=="text7Manager" && ItemManager.Instance.itemNameList.Contains("完全ブラックライト"))
                 {
                     //実行したい処理
                     DancingFlowerButtonList[0].SetActive(true);
+                    targetCollider.enabled = !targetCollider.enabled;
                 }
             }
         }
