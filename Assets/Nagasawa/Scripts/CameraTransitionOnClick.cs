@@ -15,8 +15,8 @@ public class CameraTransitionOnClick : MonoBehaviour
     public float transitionSpeed = 2.0f; // 遷移速度
     private Camera mainCamera; // メインカメラ
     private bool isTransitioning = false; // 遷移中かどうか
-    private int currentTargetIndex = -1; // 現在のターゲットインデックス
-    private int previousTargetIndex = -1; // 前のターゲットインデックス
+    [SerializeField]private int currentTargetIndex = -1; // 現在のターゲットインデックス
+    [SerializeField]private int previousTargetIndex = -1; // 前のターゲットインデックス
 
     void Start()
     {
@@ -64,6 +64,7 @@ public class CameraTransitionOnClick : MonoBehaviour
         // 前のターゲットに戻る
         if (previousTargetIndex >= 0)
         {
+            Debug.LogWarning("camera");
             StartCoroutine(TransitionToPosition(previousTargetIndex)); // 前のターゲットに戻る
         }
     }
