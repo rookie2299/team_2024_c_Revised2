@@ -7,11 +7,11 @@ using UnityEngine.EventSystems;
 public class ClockOpen : MonoBehaviour
 {
     public GameObject ClockNazoPanel;
-    public GameObject ClockPanel;
+    public GameObject ClockOpenButton;
 
     public void OnClickClockOpenButton()
     {
         ClockNazoPanel.SetActive(true);
-        ClockPanel.SetActive(false);
+        ClockOpenButton.SetActive(false);
     }
 }

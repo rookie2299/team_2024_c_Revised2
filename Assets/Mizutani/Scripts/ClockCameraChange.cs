@@ -7,20 +7,18 @@ public class ClockCameraChange : MonoBehaviour
 {
     public GameObject MainCamera;
     public GameObject ClockCamera;
-    public GameObject ClockPanel;
+    public GameObject ClockOpenButton;
 
     public void OnMouseDown()
     {
-        MainCamera.gameObject.SetActive(false);
-        ClockCamera.gameObject.SetActive(true);
-        ClockPanel.SetActive(true);
+        
+        ClockOpenButton.SetActive(true);
     }
 
     public void OnClickClockBackButton()
     {
-        MainCamera.gameObject.SetActive(true);
-        ClockCamera.gameObject.SetActive(false);
-        ClockPanel.SetActive(false);
+        
+        ClockOpenButton.SetActive(false);
     }
     
 }
