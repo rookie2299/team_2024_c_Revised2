@@ -22,6 +22,8 @@ public class ClockNazo : MonoBehaviour
     public GameObject ClockNazoPanel;
     public GameObject ClockClearPanel;
 
+    public TextWriter textWriter;
+
 
     // Start is called before the first frame update
     void Start()
@@ -207,6 +209,7 @@ public void OnClickSelectButton()
         {
             audioSource.PlayOneShot(ClearSound);
             Invoke(nameof(Clear), 1f);
+            textWriter.Cotest();
         }
     }
 

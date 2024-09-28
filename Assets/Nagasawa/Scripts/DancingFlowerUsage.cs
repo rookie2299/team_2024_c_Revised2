@@ -8,6 +8,8 @@ public class DancingFlowerUsage : MonoBehaviour
     public GameObject[] DancingFlowerButtonList;
     public Collider targetCollider;
 
+    public CameraPosition cameraPosition; // CameraPositionのインスタンスを保持
+
     private void OnMouseDown()
     {
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
@@ -20,9 +22,10 @@ public class DancingFlowerUsage : MonoBehaviour
             {   
                 Debug.Log("あ");
                 //オブジェクトが特定のnameを持つとき
-                if(hit.collider.name=="text7Manager" && ItemManager.Instance.itemNameList.Contains("完全ブラックライト"))
+                if(hit.collider.name=="text7Manager" && ItemManager.Instance.itemNameList.Contains("完全ブラックライト") && cameraPosition.isZoom)
                 {
                     //実行したい処理
+                    Debug.LogWarning("認識");
                     DancingFlowerButtonList[0].SetActive(true);
                     targetCollider.enabled = !targetCollider.enabled;
                 }

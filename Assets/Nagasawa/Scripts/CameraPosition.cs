@@ -14,10 +14,10 @@ public class CameraPosition : MonoBehaviour
     [SerializeField] private CameraTarget midCameraPosition; // ミッドカメラのポジションと回転を保持
     [SerializeField] private List<CameraTarget> targetCameraPositions; // 複数のターゲットポジションと回転を保持
     public GameObject backButton;
-    public GameObject ClockOpenButton;
     [SerializeField] private Camera mainCamera;
     public List<string> targetNames; // 複数のターゲット名を保持するリスト
     public GameObject mainPanel;
+    public bool isZoom = false;
 
     private Vector3 previousRotation; // 移動前のカメラの回転を保存する変数
 
@@ -51,10 +51,10 @@ public class CameraPosition : MonoBehaviour
     public void OnclickBackButton()
     {
         // ミッドカメラのポジションと保存した回転位置に戻す
-        MoveCameraTo(midCameraPosition.position.position, previousRotation);
+        MoveCameraTo(midCameraPosition.position.position, midCameraPosition.rotation);
         backButton.SetActive(false);
         mainPanel.SetActive(true);
-        ClockOpenButton.SetActive(false);
+        isZoom = false;
     }
 
     private void MoveCameraTo(Vector3 targetPosition, Vector3 rotation)
@@ -67,6 +67,7 @@ public class CameraPosition : MonoBehaviour
     {
         if (index >= 0 && index < targetCameraPositions.Count)
         {
+            isZoom = true;
             // 対象のターゲットポジションと回転にカメラを移動
             MoveCameraTo(targetCameraPositions[index].position.position, targetCameraPositions[index].rotation);
         }
