@@ -20,7 +20,6 @@ public class ClockClear : MonoBehaviour
     {
         ClockClearPanel1.SetActive(false);
         Destroy(ClockOpenButton);
-        ClockPanel.SetActive(true);
         SmallKey.gameObject.SetActive(true);
     }
 

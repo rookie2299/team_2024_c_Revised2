@@ -14,6 +14,7 @@ public class CameraPosition : MonoBehaviour
     [SerializeField] private CameraTarget midCameraPosition; // ミッドカメラのポジションと回転を保持
     [SerializeField] private List<CameraTarget> targetCameraPositions; // 複数のターゲットポジションと回転を保持
     public GameObject backButton;
+    public GameObject ClockOpenButton;
     [SerializeField] private Camera mainCamera;
     public List<string> targetNames; // 複数のターゲット名を保持するリスト
     public GameObject mainPanel;
@@ -53,6 +54,7 @@ public class CameraPosition : MonoBehaviour
         MoveCameraTo(midCameraPosition.position.position, previousRotation);
         backButton.SetActive(false);
         mainPanel.SetActive(true);
+        ClockOpenButton.SetActive(false);
     }
 
     private void MoveCameraTo(Vector3 targetPosition, Vector3 rotation)

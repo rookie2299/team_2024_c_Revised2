@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class ClockClose : MonoBehaviour
 {
     public GameObject ClockNazoPanel;
-    public GameObject ClockPanel;
+    public GameObject ClockOpenButton;
 
     public void OnClickCloseButton()
     {
         ClockNazoPanel.SetActive(false);
-        ClockPanel.SetActive(true);
+        ClockOpenButton.SetActive(true);
     }
    
 }
