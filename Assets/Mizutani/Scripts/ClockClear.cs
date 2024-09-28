@@ -18,7 +18,7 @@ public class ClockClear : MonoBehaviour
 
     public void OnClickClockClear1Button()
     {
-        ClockClearPanel1.SetActive(false);
+        //ClockClearPanel1.SetActive(false);
         Destroy(ClockOpenButton);
         SmallKey.gameObject.SetActive(true);
     }

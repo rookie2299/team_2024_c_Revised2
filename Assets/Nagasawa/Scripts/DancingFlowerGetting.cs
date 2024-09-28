@@ -6,7 +6,7 @@ public class DancingFlowerGetting : MonoBehaviour
     public Collider targetCollider;
 
     // コライダーの状態を切り替えるメソッド
-    public void ToggleCollider()
+    void Update()
     {
         if (targetCollider != null && ItemManager.Instance.itemNameList.Contains("text7"))
         {

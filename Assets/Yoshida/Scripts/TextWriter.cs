@@ -6,28 +6,36 @@ using UnityEngine.EventSystems;
 
 public class TextWriter : MonoBehaviour
 {
-    public UIText uitext;
+    public List<string> textList = new List<string>();  // 表示するテキストのリスト
+    public Text uiText;  // UnityのTextコンポーネントをアサインする
+    public int i = 0;  
+    private bool isShow = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("Cotest");
+        
     }
-    
-    // クリック待ちのコルーチン
-    IEnumerator Skip()
+
+    void Update()
     {
-        while (uitext.playing) yield return 0;
-        while (!uitext.IsClicked()) yield return 0;
+        if(Input.GetMouseButtonDown(0) && isShow)
+        {
+            Cotest();
+        }
     }
-    
-    // 文章を表示させるコルーチン
-    IEnumerator Cotest()
+
+    // 文章を表示させるメソッド
+    public void Cotest()
     {
-        uitext.DrawText("ナレーションだったらこのまま書けばOKだよ");
-        yield return StartCoroutine("Skip");
+         TextWrite(i);  // 次のテキストを表示
+         i++;
+        
+    }
 
-        uitext.DrawText("名前はここ！","人が話すのならこんな感じになる");
-        yield return StartCoroutine("Skip");
-
+    void TextWrite(int index)
+    {
+          uiText.text = textList[index];  // テキストを更新
+          isShow = true;  // テキストが表示されている状態にする
     }
 }
