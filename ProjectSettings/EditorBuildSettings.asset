@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Mizutani/Scenes/Title2.unity
     guid: 27c68ac7845fb284c8f263d5d7f79da7
   - enabled: 1
+    path: Assets/Nagasawa/Scenes/New Scene.unity
+    guid: f409f3b0f950a9d45a8fdd3a4e7afcd7
+  - enabled: 1
     path: Assets/Mizutani/Scenes/GameTest2.unity
     guid: 4cf0b3314090d1f4cb3b9cabb5d1e7b8
   m_configObjects: {}
