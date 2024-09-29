@@ -15,8 +15,17 @@ EditorBuildSettings:
     path: Assets/Nagasawa/Scenes/New Scene.unity
     guid: f409f3b0f950a9d45a8fdd3a4e7afcd7
   - enabled: 1
-    path: Assets/Mizutani/Scenes/True End.unity
+    path: Assets/Mizutani/Scenes/Ending/True End.unity
     guid: 08e4a1cfd685ad644b64352e5de25258
+  - enabled: 1
+    path: Assets/Mizutani/Scenes/Ending/Boukyaku.unity
+    guid: 1164f96e9273bb8419fd87b7dc14371c
+  - enabled: 1
+    path: Assets/Mizutani/Scenes/Ending/Ayamati.unity
+    guid: 412e517a7982d044882b49b3e9e02f7e
+  - enabled: 1
+    path: Assets/Mizutani/Scenes/Ending/Kyokou.unity
+    guid: 4195aeec1c884a64fa21bf4c26f0d59e
   - enabled: 1
     path: Assets/Mizutani/Scenes/GameTest2.unity
     guid: 4cf0b3314090d1f4cb3b9cabb5d1e7b8

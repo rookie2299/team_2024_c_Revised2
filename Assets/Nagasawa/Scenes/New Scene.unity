@@ -1386,11 +1386,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextPanel: {fileID: 745194949}
   textList:
+  - ' '
   - "\u30AB\u30C1\u30E3\u2026"
   - "\u3059\u308B\u3068\u6642\u8A08\u306E\u4E00\u90E8\u304C\u958B\u3044\u3066\u5C0F\u3055\u306A\u9375\u304C\u51FA\u3066\u304D\u305F"
   nameList:
-  - 
-  - 
+  - ' '
+  - ' '
+  - ' '
   nameuiText: {fileID: 794248109}
   uiText: {fileID: 112565032}
   i: 0
