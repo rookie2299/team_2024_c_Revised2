@@ -8,7 +8,7 @@ public class SceneChange : MonoBehaviour
 {
     public void OnClickStartButton()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("New Scene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("First");
     }
    
 }
