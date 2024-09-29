@@ -21,6 +21,8 @@ public class CameraPosition : MonoBehaviour
 
     private Vector3 previousRotation; // 移動前のカメラの回転を保存する変数
 
+    public GameObject ClockOpenButton;
+
     void Start()
     {
         backButton.SetActive(false);
@@ -55,6 +57,7 @@ public class CameraPosition : MonoBehaviour
         backButton.SetActive(false);
         mainPanel.SetActive(true);
         isZoom = false;
+        ClockOpenButton.SetActive(false);
     }
 
     private void MoveCameraTo(Vector3 targetPosition, Vector3 rotation)
