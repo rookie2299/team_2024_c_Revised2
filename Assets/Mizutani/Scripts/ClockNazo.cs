@@ -21,8 +21,10 @@ public class ClockNazo : MonoBehaviour
 
     public GameObject ClockNazoPanel;
     public GameObject ClockClearPanel;
+    public GameObject ClockOpenButton;
+    public GameObject SmallKey;
 
-    public TextWriter textWriter;
+    public TextWriter textWriter;   //TextWriterスクリプト
 
 
     // Start is called before the first frame update
@@ -209,7 +211,7 @@ public void OnClickSelectButton()
         {
             audioSource.PlayOneShot(ClearSound);
             Invoke(nameof(Clear), 1f);
-            textWriter.Cotest();
+            Destroy(ClockOpenButton);
         }
     }
 
@@ -218,6 +220,8 @@ void Clear()
     ClockNazoPanel.SetActive(false);
     ClockClearPanel.SetActive(true);
     audioSource.PlayOneShot(ClockOpenSound);
+    textWriter.Cotest();    //TextWriterスクリプトCotestメソッドを呼び出す
+    SmallKey.gameObject.SetActive(true);
 }
 
 }
