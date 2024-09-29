@@ -6166,10 +6166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemNameList: []
-  targetObject: {fileID: 1175300322}
-  requiredItems:
-  - "\u5B8C\u5168\u30D6\u30E9\u30C3\u30AF\u30E9\u30A4\u30C8"
-  - "\u30DE\u30B8\u30C3\u30AF\u30CF\u30F3\u30C9"
+  resultItem: {fileID: 1175300322}
 --- !u!4 &545589577
 Transform:
   m_ObjectHideFlags: 0
@@ -7528,7 +7525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e92811dbbac53f4ba102bf69b780375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: key(box)
+  itemName: key(door)
 --- !u!4 &717414261 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: df27b97520474b841b0f41fb2e36db7e, type: 3}
@@ -12529,7 +12526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e92811dbbac53f4ba102bf69b780375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: "\u304A\u672D"
 --- !u!4 &1193605554 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4fdf28ba4fad5af4793cbd84233f670c, type: 3}
