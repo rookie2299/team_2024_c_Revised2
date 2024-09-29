@@ -15,9 +15,9 @@ public class ClockNazo : MonoBehaviour
     public AudioClip ClockOpenSound;
     private AudioSource audioSource;
 
-    private int HourCount = 18;
-    private int MinuteCount = 53;
-    private int SecondCount = 22;
+    private int HourCount = 0;
+    private int MinuteCount = 6;
+    private int SecondCount = 18;
 
     public GameObject ClockNazoPanel;
     public GameObject ClockClearPanel;
