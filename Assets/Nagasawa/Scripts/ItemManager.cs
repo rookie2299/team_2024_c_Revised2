@@ -6,9 +6,7 @@ public class ItemManager : MonoBehaviour
     public static ItemManager Instance { get; private set; }
     private List<Item> itemList = new List<Item>();
     public List<string> itemNameList = new List<string>(); 
-
-    public GameObject targetObject; // SetActiveにするオブジェクト
-    public List<string> requiredItems = new List<string> { "ItemA", "ItemB" }; // 必要なアイテムのリスト
+    public GameObject resultItem;
 
     private bool hasLoggedNullWarning = false; // 警告を一度だけ出すためのフラグ
 
@@ -26,7 +24,7 @@ public class ItemManager : MonoBehaviour
     }
 
     public void AddItemToList(Item item)
-    {   
+    {
         Debug.LogWarning("Item is being added.");
         itemList.Add(item);
         itemNameList.Add(item.itemName);
@@ -37,7 +35,6 @@ public class ItemManager : MonoBehaviour
     {
         return itemList;
     }
-
     public string CanEscape(List<List<string>> requiredItems)
     {
         foreach (var requiredList in requiredItems)
@@ -66,34 +63,21 @@ public class ItemManager : MonoBehaviour
 
     private void CheckItems()
     {
-        // targetObjectがnullでないかチェック
-        if (targetObject == null)
+        // resultItemがnullではなく、有効であることを確認
+        if (resultItem != null)
         {
-            if (!hasLoggedNullWarning) // 警告を一度だけ出す
+            if(ItemManager.Instance.itemNameList.Contains("完全ブラックライト") && ItemManager.Instance.itemNameList.Contains("マジックハンド"))
             {
-                Debug.LogWarning("targetObject is null. Please assign a valid GameObject.");
-                hasLoggedNullWarning = true; // 警告を出したフラグを立てる
+                resultItem.SetActive(true);
             }
-            return; // nullの場合は処理を中断
         }
         else
         {
-            hasLoggedNullWarning = false; // targetObjectが有効な場合はフラグをリセット
-        }
-
-        bool hasRequiredItems = true;
-
-        // 必要なアイテムが全てあるか確認
-        foreach (var itemName in requiredItems)
-        {
-            if (!itemList.Exists(item => item.itemName == itemName))
+            if (!hasLoggedNullWarning)
             {
-                hasRequiredItems = false;
-                break;
+                Debug.LogWarning("resultItemが存在しません。");
+                hasLoggedNullWarning = true; // 一度だけ警告を表示
             }
         }
-
-        // オブジェクトのアクティブ状態を設定
-        targetObject.SetActive(hasRequiredItems);
     }
 }
