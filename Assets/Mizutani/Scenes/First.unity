@@ -192,7 +192,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5973"
+  m_Text: 
 --- !u!222 &6602653
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -387,16 +387,16 @@ MonoBehaviour:
   - "\uFF08\u65E9\u304F\u9003\u3052\u306A\u304D\u3083\uFF01 \uFF09"
   - "\u9375\u3092\u63A2\u3057\u3066\u90E8\u5C4B\u304B\u3089\u8131\u51FA\u3057\u307E\u3057\u3087\u3046 "
   nameList:
-  - "\u5973"
+  - "\u79C1"
   - "\u3000"
   - "\u3000"
-  - "\u5973"
+  - "\u79C1"
   - "\u3000"
-  - "\u5973"
-  - "\u5973"
+  - "\u79C1"
+  - "\u79C1"
   - "\u3000"
   - "\u3000"
-  - "\u5973"
+  - "\u79C1"
   - "\u3000"
   nameuiText: {fileID: 6602652}
   uiText: {fileID: 1042963690}
