@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro; // TextMeshProを使用するための名前空間
 
 public class Safe : MonoBehaviour
 {
@@ -6,10 +7,13 @@ public class Safe : MonoBehaviour
     public string password2 = "abcd";
     public Camera mainCamera;
     private string inputPassword = "";
-    
-    // ドアのフィールドを追加
+
+    // ドアのフィールド
     public GameObject door1; // パスワード1で開くドア
     public GameObject door2; // パスワード2で開くドア
+
+    // TextMeshProでパスワードの入力を表示
+    public TextMeshProUGUI passwordDisplay; // パスワード入力表示用のTextMeshPro
 
     private void Update()
     {
@@ -30,6 +34,8 @@ public class Safe : MonoBehaviour
                         {
                             string number = buttonName.Substring(4); // "text"の後の部分を取得
                             inputPassword += number; // パスワードに追加
+                            passwordDisplay.gameObject.SetActive(true);
+                            UpdatePasswordDisplay(); // パスワードの表示を更新
                             Debug.Log("Current Input: " + inputPassword);
                         }
                     }
@@ -52,6 +58,11 @@ public class Safe : MonoBehaviour
         }
     }
 
+    private void UpdatePasswordDisplay()
+    {
+        passwordDisplay.text = inputPassword; // パスワードの入力内容をTextMeshProに表示
+    }
+
     private void CheckPassword()
     {
         if (inputPassword == password1)
@@ -69,6 +80,7 @@ public class Safe : MonoBehaviour
 
         // 入力をリセット
         inputPassword = "";
+        UpdatePasswordDisplay(); // リセット後の表示も更新
     }
 
     private void DeleteLastCharacter()
@@ -76,6 +88,7 @@ public class Safe : MonoBehaviour
         if (inputPassword.Length > 0)
         {
             inputPassword = inputPassword.Substring(0, inputPassword.Length - 1); // 最後の文字を削除
+            UpdatePasswordDisplay(); // 削除後のパスワードを更新
             Debug.Log("Current Input after Delete: " + inputPassword);
         }
     }
