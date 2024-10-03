@@ -10848,7 +10848,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u623B\u308B"
+  m_text: Back
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12835,7 +12835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1111151588
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12875,10 +12875,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u9589\u3058\u308B"
+  m_text: Close
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: db6c3434919892d4993714259a46b7d1, type: 2}
-  m_sharedMaterial: {fileID: -8674768635734763159, guid: db6c3434919892d4993714259a46b7d1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -14504,7 +14504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1257816416
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20262,7 +20262,7 @@ Transform:
   m_GameObject: {fileID: 1896854790}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -539.1126, y: -291.42627, z: 22.911354}
+  m_LocalPosition: {x: -0.11260986, y: 11.57373, z: 22.911354}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20273,7 +20273,7 @@ Transform:
   - {fileID: 717414261}
   - {fileID: 5643020621618660897}
   - {fileID: 1519630250}
-  m_Father: {fileID: 2132034709}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1910230914
 GameObject:
@@ -22023,7 +22023,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u8A2D\u5B9A"
+  m_text: Option
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -23172,7 +23172,6 @@ RectTransform:
   - {fileID: 2144387533}
   - {fileID: 574103640}
   - {fileID: 1050986791}
-  - {fileID: 1896854791}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -96.889, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -30478,6 +30477,7 @@ SceneRoots:
   - {fileID: 86103195}
   - {fileID: 1360985914}
   - {fileID: 2132034709}
+  - {fileID: 1896854791}
   - {fileID: 207093979}
   - {fileID: 229939911}
   - {fileID: 462419588}
